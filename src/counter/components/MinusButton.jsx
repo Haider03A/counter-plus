@@ -22,6 +22,6 @@ export default () => {
     }
 
     return(
-        <button onClick={minusCount} className="button minus">-</button>
+        <button onClick={minusCount} className="h-12 bg-gray-200 bg-opacity-50 rounded-lg px-3"><svg className='h-6 pointer-events-none stroke-gray-400 stroke-3' xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none"><path d="M6 12L18 12" strokeLinecap="round" strokeLinejoin="round"/></svg></button>
     )
 }

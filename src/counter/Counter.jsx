@@ -1,4 +1,4 @@
-import './style/Public.css'
+import './counter.css'
 import AddItems from './components/AddItems'
 import ListOFItems from './components/ListOFItems'
 import { useState } from 'react'
@@ -14,7 +14,7 @@ export default () => {
     const maxCount = 999
     const valeuCounterContext = { items, setItems, key, setKey, minCount, maxCount }
     return (
-        <main className="container">
+        <main>
             <CounterContext.Provider value={valeuCounterContext}>
                 <LocalStorage />
                 <AddItems />
