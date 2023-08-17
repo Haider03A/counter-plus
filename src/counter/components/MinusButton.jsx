@@ -13,7 +13,7 @@ export default () => {
             
             if (cloneItems[i].key == dataKey) { 
                 if (count > minCount) {
-                    if (cloneItems[i].inputNum && (count - cloneItems[i].inputNum) > minCount) {
+                    if (cloneItems[i].inputNum && (count - cloneItems[i].inputNum) >= minCount) {
                         cloneItems[i].count = (count - cloneItems[i].inputNum)
                         cloneItems[i].inputNum = ''
                         break;

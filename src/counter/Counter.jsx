@@ -10,7 +10,7 @@ import LocalStorage from './components/LocalStorage'
 export default () => {
     const [items, setItems] = useState([])
     const [key, setKey] = useState(0)
-    const minCount = 0.5
+    const minCount = 0
     const maxCount = 999
     const valeuCounterContext = { items, setItems, key, setKey, minCount, maxCount }
     return (
