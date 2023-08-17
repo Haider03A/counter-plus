@@ -14,7 +14,6 @@ export default () => {
             let word = '';
             const words = [];
 
-
             for (let i = 1; i < inputValue.length - 1; i++) {
                 if (inputValue[i] != '\n' && inputValue[i] != '') {
                     word += inputValue[i]
@@ -26,7 +25,7 @@ export default () => {
 
             words.forEach(word => {
                 if (word != '') {
-                    cloneItems.push({ key: cloneKey, item: word, count: 0 })    
+                    cloneItems.push({ key: cloneKey, item: word, count: 0, inputNum: ''})    
                     cloneKey+=1
                 }
             })
@@ -37,7 +36,8 @@ export default () => {
             cloneItems.push({
                 key,
                 item: inputValue,
-                count: 0
+                count: 0,
+                inputNum: ''
             })
             setItems(cloneItems)
             setKey(key + 1)

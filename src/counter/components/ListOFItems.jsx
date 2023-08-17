@@ -16,16 +16,16 @@ export default () => {
                     <div className='flex justify-between items-center'>
                         <span className="font-bold text-lg">{item.item}</span>
                         <div className='flex items-center gap-x-1' data-key={item.key}>
-                            <span className="h-10 leading-10 px-3 bg-blue-500 rounded-lg text-white font-bold">{item.count}</span>
+                            <span dir='ltr' className="h-10 leading-10 px-3 bg-blue-500 rounded-lg text-white font-bold">{item.count}</span>
                             <RemoveButton />
                         </div>
                     </div>
-                    <div className='flex items-center gap-x-1' data-key={item.key}>
-                        <div className='flex gap-x-1'>
+                    <div className='flex items-center gap-x-1'>
+                        <div className='flex gap-x-1' data-key={item.key}>
                             <PlusButton />
                             <MinusButton />
                         </div>
-                        <InputCounter />
+                        <InputCounter dataKey={item.key} value={item.inputNum} />
                     </div>
 
                 </li>
