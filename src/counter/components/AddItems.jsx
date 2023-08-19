@@ -9,12 +9,12 @@ export default () => {
         const inputValue = inputRef.current.value.trim()
         const cloneItems = [...items]
 
-        if (inputValue[0] == '$' && inputValue[inputValue.length - 1] == '$') {
+        if (inputValue[0] == '$' && inputValue[1] == '$') {
             let cloneKey = key
             let word = '';
             const words = [];
 
-            for (let i = 1; i < inputValue.length - 1; i++) {
+            for (let i = 2; i < inputValue.length; i++) {
                 if (inputValue[i] != '\n' && inputValue[i] != '') {
                     word += inputValue[i]
                 } else {
