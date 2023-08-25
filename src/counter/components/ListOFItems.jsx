@@ -7,9 +7,9 @@ import { useContext, useEffect, useState } from 'react'
 
 
 export default () => {
-    const { items } = useContext(CounterContext)
+    const { items, setThereIsCountNum } = useContext(CounterContext)
     const [elements, setElements] = useState()
-    
+
     useEffect(_ => {
         const elements = items.map(item => {
             return (
@@ -20,7 +20,7 @@ export default () => {
                             <div>
                                 <span dir='ltr' className="h-10 block leading-10 px-3 bg-blue-500 rounded-lg text-white font-bold">{item.count}</span>
                             </div>
-                            <RemoveButton dataKey={item.key} countEqZero={item.count ? false : true }/>
+                            <RemoveButton dataKey={item.key} countEqZero={item.count ? false : true} />
                         </div>
                     </div>
 
@@ -35,6 +35,17 @@ export default () => {
                 </li>
             )
         })
+
+        let countHave = false
+        for (let i = 0; i < items.length; i++) {
+            if (items[i].count) {
+                countHave = true
+                break;
+            } else {
+                countHave = false
+            }
+        }
+        setThereIsCountNum(countHave)
 
         setElements(elements)
 
