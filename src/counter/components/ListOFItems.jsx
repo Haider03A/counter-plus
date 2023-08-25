@@ -41,7 +41,7 @@ export default () => {
     }, [items])
 
     return (
-        <ul className="container flex flex-col gap-y-4 pb-28 md:px-10 mx-auto px-5 pt-5">
+        <ul className="sm:container flex flex-col gap-y-4 pb-28 md:px-10 mx-auto px-5 pt-5">
             {elements}
         </ul>
     )

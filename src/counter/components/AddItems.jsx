@@ -15,7 +15,11 @@ export default () => {
             const words = [];
 
             for (let i = 2; i < inputValue.length; i++) {
-                if (inputValue[i] != '\n' && inputValue[i] != '') {
+                if(inputValue[i] != '\n' && inputValue[i] != '' && inputValue.length - 1 == i) {
+                    word += inputValue[i]
+                    words.push(word.trim())
+                    word = ''
+                } else if (inputValue[i] != '\n' && inputValue[i] != '') {
                     word += inputValue[i]
                 } else {
                     words.push(word.trim())
