@@ -9,7 +9,7 @@ export default () => {
         if (items[0]) {
             let toClipboard = ''
             items.forEach(({ item, count }) => {
-                toClipboard += `${item}\t${count}\n`
+                toClipboard += `${item}\t${count ? count : ''}\n`
             });
             navigator.clipboard.writeText(toClipboard).then(
                 () => {
