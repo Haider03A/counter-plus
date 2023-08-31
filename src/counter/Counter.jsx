@@ -11,10 +11,11 @@ import MainController from './components/mainController/MainController'
 export default () => {
     const [items, setItems] = useState([])
     const [key, setKey] = useState(0)
+    const [newCountNum, setNewCountNum] = useState(null)
     const [thereIsCountNum, setThereIsCountNum] = useState(false)
     const minCount = 0
     const maxCount = 999
-    const valeuCounterContext = { items, setItems, key, setKey, minCount, maxCount, thereIsCountNum, setThereIsCountNum }
+    const valeuCounterContext = { items, setItems, key, setKey, minCount, maxCount, thereIsCountNum, setThereIsCountNum, newCountNum, setNewCountNum }
     return (
         <main>
             <CounterContext.Provider value={valeuCounterContext}>

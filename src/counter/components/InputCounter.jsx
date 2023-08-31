@@ -2,7 +2,7 @@ import { useContext, useEffect, useState } from 'react'
 import CounterContext from './context/CounterContext'
 
 export default ({ dataKey }) => {
-    const { items, setItems, maxCount, minCount } = useContext(CounterContext)
+    const { items, setItems, maxCount, minCount, setNewCountNum } = useContext(CounterContext)
     const [butVisible, setButVisible] = useState(false)
     const [butMinus, setButMinus] = useState(false)
     const [inputNotVaild, setInputNotVaild] = useState(false)
@@ -31,6 +31,7 @@ export default ({ dataKey }) => {
                     if (resoltCount <= maxCount && resoltCount >= minCount) {
                         cloneItems[i].count = resoltCount
                         setInputNotVaild(false)
+                        setNewCountNum({key: dataKey, newCountNum: theEndValue})
                         inputRef.focus()
                         inputRef.value = ''
                         setTheEndValue('')
@@ -64,10 +65,10 @@ export default ({ dataKey }) => {
 
 
     return (
-        <div className="font-bold flex gap-x-1 basis-full justify-end 2sm:basis-auto 2sm:justify-normal">
+        <div className="font-bold flex gap-x-1 basis-full justify-end 3sm:basis-auto 3sm:justify-normal">
             {butVisible &&
-                <button onClick={onClickHandler} className={`${butMinus ? 'bg-red-500' : 'bg-blue-500'} h-12 px-3 bg-blue-500 text-white rounded-lg`}>حساب</button>}
-            <input dir='ltr' type="number" value={theEndValue} min={0} placeholder="ادخل رقما" onKeyDown={onKeydownHandker} onChange={onChangeHandler} className={`${inputNotVaild ? 'focus:border-b-red-500' : 'focus:border-b-blue-500'} w-28 h-12 placeholder:text-right  bg-gray-200 bg-opacity-50 outline-none p-2.5 border-b-4 border-transparent duration-300 rounded-lg`} />
+                <button onClick={onClickHandler} className={`${butMinus ? 'bg-red-500' : 'bg-indigo-500'} h-14 px-3 bg-blue-500 text-white rounded-lg`}>حساب</button>}
+            <input dir='ltr' type="number" value={theEndValue} min={0} placeholder="أدخل رقما" onKeyDown={onKeydownHandker} onChange={onChangeHandler} className={`${inputNotVaild ? 'focus:border-red-500' : 'focus:border-indigo-500'} border-dashed border-2 w-28 h-14 placeholder:text-gray-300 placeholder:text-right outline-none p-2.5 bg-transparent  duration-300 rounded-lg`} />
         </div>
     )
 }

@@ -4,6 +4,7 @@ import PlusButton from './PlusButton'
 import RemoveButton from './RemoveButton'
 import CounterContext from './context/CounterContext'
 import { useContext, useEffect, useState } from 'react'
+import Counter from './Counter'
 
 
 export default () => {
@@ -12,26 +13,26 @@ export default () => {
 
     useEffect(_ => {
         const elements = items.map(item => {
+
+
             return (
-                <li className='flex flex-col gap-y-4' key={item.key} data-key={item.key}>
-                    <div className='flex justify-between items-center gap-x-1'>
+                <li className='bg-white flex gap-x-4 border-b p-2 border-b-gray-100 rounded-lg' key={item.key} data-key={item.key}>
+                    <div className='flex flex-col gap-3'>
+                        <PlusButton dataKey={item.key} />
+                        <MinusButton dataKey={item.key} />
+                    </div>
+                    <div className='flex w-full  justify-between items-start gap-x-1'>
                         <span className="basis-full font-bold text-lg">{item.item}</span>
-                        <div className='flex items-center gap-x-1'>
-                            <div>
-                                <span dir='ltr' className="h-10 block leading-10 px-3 bg-blue-500 rounded-lg text-white font-bold">{item.count}</span>
+                        <div className='flex flex-col flex-wrap justify-between items-end 3sm:flex-nowrap h-full gap-4'>
+                            <div className='flex gap-x-1'>
+                                <Counter item={item} />
+                                <RemoveButton dataKey={item.key} countEqZero={item.count ? false : true} />
                             </div>
-                            <RemoveButton dataKey={item.key} countEqZero={item.count ? false : true} />
+                            <div className=''>
+                                <InputCounter dataKey={item.key} />
+                            </div>
                         </div>
                     </div>
-
-                    <div className='flex flex-wrap justify-between gap-1'>
-                        <div className='flex gap-x-1'>
-                            <PlusButton dataKey={item.key} />
-                            <MinusButton dataKey={item.key} />
-                        </div>
-                        <InputCounter dataKey={item.key} />
-                    </div>
-
                 </li>
             )
         })
@@ -52,8 +53,14 @@ export default () => {
     }, [items])
 
     return (
-        <ul className="sm:container flex flex-col gap-y-4 pb-28 md:px-10 mx-auto px-5 pt-5">
-            {elements}
-        </ul>
+        <>
+            {items[0] ?
+                <ul className="sm:container flex flex-col gap-y-3 pb-28 md:px-10 mx-auto px-5 pt-5">
+                    {elements}
+                </ul>
+                :
+                <h3 className="sm:container py-24 font-bold text-gray-300 bg-white flex justify-center items-center md:px-10 mx-auto p-5">لا يوجد اي عنصر مضاف، أضف عناصر لتظهر هنا</h3>
+            }
+        </>
     )
 }

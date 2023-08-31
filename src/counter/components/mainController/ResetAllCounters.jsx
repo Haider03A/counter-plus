@@ -23,6 +23,6 @@ export default () => {
         
     }
     return(
-        <button onClick={clickHandler} className="active:bg-blue-500 duration-300 h-12 px-3 bg-gray-600 text-stone-50 rounded-lg">اعادة ضبط الكل</button>
+        <button onClick={clickHandler} className="active:bg-blue-500 duration-300 h-12 px-3 bg-teal-600 text-stone-50 rounded-lg">اعادة ضبط الكل</button>
     )
 }

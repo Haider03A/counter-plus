@@ -34,6 +34,6 @@ export default ({ dataKey, countEqZero }) => {
     </svg>
 
     return (
-        <button onClick={removeItem} className={`${countEqZero ? 'bg-rose-500' : 'bg-gray-600'} active:bg-blue-500 duration-300 h-10 rounded-lg px-1`}>{countEqZero ? deleteIcon : resetIcon}</button>
+        <button onClick={removeItem} className={`${countEqZero ? 'bg-rose-500' : 'bg-teal-600'} active:bg-blue-500 duration-300 h-10 rounded-lg px-1`}>{countEqZero ? deleteIcon : resetIcon}</button>
     )
 }
