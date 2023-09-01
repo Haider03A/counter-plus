@@ -1,6 +1,6 @@
 import { useContext, useEffect, useState } from "react"
 import { motion, AnimatePresence } from "framer-motion"
-import CounterContext from './context/CounterContext'
+import CounterContext from '../../../../context/counterContext/CounterContext'
 
 export default ({ item }) => {
     const { items, setNewCountNum, newCountNum } = useContext(CounterContext)

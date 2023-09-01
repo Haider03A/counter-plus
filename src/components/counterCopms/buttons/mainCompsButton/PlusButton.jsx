@@ -1,5 +1,6 @@
 import { useContext, useState } from 'react'
-import CounterContext from './context/CounterContext'
+import CounterContext from '../../../../context/counterContext/CounterContext'
+
 export default ({dataKey}) => {
     const { items, setItems, maxCount, setNewCountNum } = useContext(CounterContext)
     const [butChliked, setButChliked] = useState(false)

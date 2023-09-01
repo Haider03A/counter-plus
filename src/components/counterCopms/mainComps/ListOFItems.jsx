@@ -1,10 +1,10 @@
-import InputCounter from './InputCounter'
-import MinusButton from './MinusButton'
-import PlusButton from './PlusButton'
-import RemoveButton from './RemoveButton'
-import CounterContext from './context/CounterContext'
+import InputCounter from './childers/InputCounter'
+import MinusButton from '../buttons/mainCompsButton/MinusButton'
+import PlusButton from '../buttons/mainCompsButton/PlusButton'
+import RemoveButton from '../buttons/mainCompsButton/RemoveButton'
+import CounterContext from '../../../context/counterContext/CounterContext'
 import { useContext, useEffect, useState } from 'react'
-import Counter from './Counter'
+import Counter from './childers/CounterItem'
 
 
 export default () => {

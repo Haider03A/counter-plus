@@ -1,8 +1,8 @@
 import { useContext } from 'react'
-import CounterContext from '../context/CounterContext'
-import CopyToClipboard from "./CopyToClipboard"
-import RemoveAllItems from "./RemoveAllItems"
-import ResetAllCounters from "./ResetAllCounters"
+import CounterContext from '../../../context/counterContext/CounterContext'
+import CopyToClipboard from "../buttons/headerButton/CopyToClipboardButton"
+import RemoveAllItems from "../buttons/headerButton/RemoveAllItemsButton"
+import ResetAllCounters from "../buttons/headerButton/ResetAllCountersButton"
 
 export default () => {
     const { items, thereIsCountNum, setThereIsCountNum } = useContext(CounterContext)

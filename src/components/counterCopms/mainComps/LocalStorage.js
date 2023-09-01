@@ -1,5 +1,5 @@
 import { useContext, useEffect } from 'react'
-import CounterContext from './context/CounterContext'
+import CounterContext from '../../../context/counterContext/CounterContext'
 
 export default () => {
     const localStorageItems = JSON.parse(localStorage.getItem('items'))

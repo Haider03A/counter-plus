@@ -1,4 +1,4 @@
-import CounterContext from './context/CounterContext'
+import CounterContext from '../../../context/counterContext/CounterContext'
 import { useContext, useRef } from 'react'
 
 export default () => {

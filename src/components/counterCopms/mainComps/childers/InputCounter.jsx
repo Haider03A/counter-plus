@@ -1,5 +1,5 @@
 import { useContext, useEffect, useState } from 'react'
-import CounterContext from './context/CounterContext'
+import CounterContext from '../../../../context/counterContext/CounterContext'
 
 export default ({ dataKey }) => {
     const { items, setItems, maxCount, minCount, setNewCountNum } = useContext(CounterContext)

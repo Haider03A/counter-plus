@@ -1,5 +1,5 @@
 import { useContext } from 'react'
-import CounterContext from '../context/CounterContext'
+import CounterContext from '../../../../context/counterContext/CounterContext'
 
 export default () => {
     const { setItems, setKey} = useContext(CounterContext)

@@ -1,11 +1,11 @@
 import './counter.css'
-import AddItems from './components/AddItems'
-import ListOFItems from './components/ListOFItems'
+import AddItems from '../../components/counterCopms/mainComps/AddItems'
+import ListOFItems from '../../components/counterCopms/mainComps/ListOFItems'
 import { useState } from 'react'
-import CounterContext from './components/context/CounterContext'
-import LocalStorage from './components/LocalStorage'
-import MainController from './components/mainController/MainController'
+import LocalStorage from '../../components/counterCopms/mainComps/LocalStorage'
+import MainController from '../../components/counterCopms/header/HeaderCounter'
 
+import CounterContext from '../../context/counterContext/CounterContext'
 
 
 export default () => {
