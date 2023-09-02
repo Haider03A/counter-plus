@@ -13,7 +13,7 @@ export default () => {
             {items[0] && <CopyToClipboardButton />}
             <div className="flex gap-1 flex-wrap basis-full justify-end 2sm:basis-auto 2sm:justify-normal">
                 {thereIsCountNum && <ResetAllCountersButton />}
-               <RemoveAllItemsButton />
+               {items[0] && <RemoveAllItemsButton />}
             </div>
         </div>
     )

@@ -38,10 +38,7 @@ export default ({ item }) => {
 
     return (
         <div className='text-white font-bold h-10 relative'>
-            {
-                item.count &&
-                <span dir='ltr' className={`h-full duration-300 block leading-10 px-3 ${(valueMinus == 'normal' && 'bg-teal-600') || (valueMinus && 'bg-rose-500') || (!valueMinus && 'bg-indigo-500')} rounded-lg`}>{item.count}</span>
-            }
+            <span dir='ltr' className={`h-full duration-300 block leading-10 px-3 ${(valueMinus == 'normal' && 'bg-teal-600') || (valueMinus && 'bg-rose-500') || (!valueMinus && 'bg-indigo-500')} rounded-lg`}>{item.count}</span>
             <AnimatePresence>
                 {countNumAlert}
             </AnimatePresence>
