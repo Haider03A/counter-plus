@@ -3,7 +3,7 @@ import MinusButton from '../buttons/mainCompsButton/MinusButton'
 import PlusButton from '../buttons/mainCompsButton/PlusButton'
 import RemoveButton from '../buttons/mainCompsButton/RemoveButton'
 import CounterContext from '../../../context/counterContext/CounterContext'
-import { useContext, useEffect, useState } from 'react'
+import { useContext, useEffect, useRef, useState } from 'react'
 import Counter from './childers/CounterItem'
 import MoverButton from './childers/MoverItem'
 
@@ -11,6 +11,7 @@ import MoverButton from './childers/MoverItem'
 export default () => {
     const { items, setThereIsCountNum } = useContext(CounterContext)
     const [elements, setElements] = useState()
+    const listBoxRef = useRef()
 
     useEffect(_ => {
         const elements = items.map((item, i) => {
@@ -36,7 +37,7 @@ export default () => {
                             </div>
                         </div>
                     </div>
-                    <MoverButton />
+                    <MoverButton listBoxRef />
                 </li>
             )
         })
@@ -59,7 +60,7 @@ export default () => {
     return (
         <>
             {items[0] ?
-                <ul className="sm:container flex flex-col gap-y-3 pb-28 md:px-10 mx-auto px-5 pt-5">
+                <ul ref={listBoxRef} className="sm:container overflow-y-hidden flex flex-col gap-y-3 pb-28 md:px-10 mx-auto px-5 pt-5">
                     {elements}
                 </ul>
                 :

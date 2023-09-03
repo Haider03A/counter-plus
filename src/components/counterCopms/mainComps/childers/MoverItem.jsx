@@ -1,28 +1,15 @@
 import { useState } from "react";
 
-export default () => {
+export default ({ listBoxRef }) => {
     let timeHoldTouch, timeTouchStatus
 
-    const touchStartHandler = (e) => {
-        timeHoldTouch = setTimeout(() => {
-            timeTouchStatus = true
+    const touchStartHandler = (e) => timeHoldTouch = setTimeout(() => timeTouchStatus = true, 300)
+
+    const touchEndHandler = (e) => !timeTouchStatus ? clearTimeout(timeHoldTouch) : false;
 
 
-        }, 300)
-    }
-
-    const touchEndHandler = (e) => {
-        if (timeTouchStatus) {
-
-        } else {
-            clearTimeout(timeHoldTouch)
-        }
-
-    }
 
     const touchMoveHandler = (e) => {
-        
-
         if (timeTouchStatus) {
             const parentElement = e.target.parentElement
             const moverHeight = e.target.offsetHeight
@@ -30,9 +17,18 @@ export default () => {
             const itemOffsetY = parentElement.offsetTop
             const pageY = e.touches[0].pageY
             const result = -(itemOffsetY + (itemHeight - moverHeight / 2) - pageY)
-            console.log((itemHeight + moverHeight / 2));
 
             parentElement.style.transform = `translateY(${result}px)`
+
+            const clientY = e.touches[0].clientY
+            const screenHeight = window.screen.height
+
+            if (clientY < 200) {
+                window.scrollBy(0, -10)
+            } else if (clientY > screenHeight - 200) {
+                window.scrollBy(0, +10)
+            }
+
         } else {
             clearTimeout(timeHoldTouch)
         }
