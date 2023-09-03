@@ -11,7 +11,7 @@ import { valeusCounterContext } from '../../context/counterContext/CounterContex
 
 export default () => {
    return (
-        <main>
+        <main className='bg-gray-100'>
             <CounterContext.Provider value={valeusCounterContext()}>
                 <LocalStorage />
                 <MainController />
