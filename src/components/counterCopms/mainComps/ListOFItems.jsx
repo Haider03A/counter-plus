@@ -18,7 +18,7 @@ export default () => {
 
 
             return (
-                <li style={{order: i}} className={`${i % 2 != 0 ? 'bg-gray-50' : 'bg-gray-100'} p-2 pb-0 rounded-lg`} key={item.key} data-key={item.key}>
+                <li style={{order: i}} className={`${i % 2 != 0 ? 'bg-gray-50' : 'bg-gray-100'} p-2 pb-0 rounded-lg block`} key={item.key} data-key={item.key}>
                     <div className='flex gap-x-4'>
                         <div className='flex flex-col gap-3'>
                             <PlusButton dataKey={item.key} />
@@ -60,7 +60,7 @@ export default () => {
     return (
         <>
             {items[0] ?
-                <ul ref={listBoxRef} className="sm:container overflow-y-hidden flex flex-col gap-y-3 pb-28 md:px-10 mx-auto px-5 pt-5">
+                <ul ref={listBoxRef} className="sm:container relative overflow-y-hidden flex flex-col gap-y-3 pb-28 md:px-10 mx-auto px-5 pt-5">
                     {elements}
                 </ul>
                 :
