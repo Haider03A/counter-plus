@@ -18,8 +18,8 @@ export default () => {
 
 
             return (
-                <li style={{order: i}} className={`${false ? 'bg-gray-50' : 'bg-white'} border-dashed border-2 border-transparent p-2 pb-0 rounded-lg block`} key={item.key} data-key={item.key}>
-                    <div className='flex gap-x-4'>
+                <li style={{order: i}} className={`${false ? 'bg-gray-50' : 'bg-white'} mb-3 border-dashed border-2 border-transparent p-2 pb-0 rounded-lg block`} key={item.key} data-key={item.key}>
+                    <div className='flex gap-x-4 mb-3'>
                         <div className='flex flex-col gap-3'>
                             <PlusButton dataKey={item.key} />
                             <MinusButton dataKey={item.key} />
@@ -37,7 +37,7 @@ export default () => {
                             </div>
                         </div>
                     </div>
-                    <MoverButton listBoxRef items={items} />
+                    <MoverButton listBoxRef={listBoxRef} items={items} />
                 </li>
             )
         })
@@ -60,11 +60,11 @@ export default () => {
     return (
         <>
             {items[0] ?
-                <ul ref={listBoxRef} className="sm:container bg-transparent relative overflow-y-hidden flex flex-col gap-y-3 pb-28 md:px-10 mx-auto px-5 pt-5">
+                <ul ref={listBoxRef} className="sm:container bg-transparent relative overflow-y-hidden flex flex-col pb-28 md:px-10 mx-auto px-5 pt-5">
                     {elements}
                 </ul>
                 :
-                <h3 className="sm:container py-24 font-bold text-gray-300 bg-white flex justify-center items-center md:px-10 mx-auto p-5">لا يوجد اي عنصر مضاف، أضف عناصر لتظهر هنا</h3>
+                <h3 className="sm:container py-24 font-bold text-gray-300 flex justify-center items-center md:px-10 mx-auto p-5">لا يوجد اي عنصر مضاف، أضف عناصر لتظهر هنا</h3>
             }
         </>
     )
