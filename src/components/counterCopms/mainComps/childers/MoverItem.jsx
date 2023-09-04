@@ -1,8 +1,8 @@
-import { useState } from "react"
+import { useContext } from 'react'
+import CounterContext from '../../../../context/counterContext/CounterContext'
 
-
-export default ({ listBoxRef, items }) => {
-
+export default ({ listBoxRef }) => {
+    const { items, setItems } = useContext(CounterContext)
 
     let timeHoldTouch, timeTouchStatus, parentElement
 
@@ -30,20 +30,29 @@ export default ({ listBoxRef, items }) => {
     const touchMoveHandler = (e) => {
         if (timeTouchStatus) {
 
+            // Drag
             const pageY = e.touches[0].pageY,
 
-                listBoxOffsetTop = listBoxRef.current.offsetTop,
+                listBoxOffsetTop = listBoxRef.current.offsetTop + 20, // with padding-top
+
                 itemTop = parentElement.offsetTop + listBoxOffsetTop,
+                itemOffsetHeight = parentElement.offsetHeight + 12, // with margen-bottom
 
                 moverOffsetTop = e.target.offsetTop,
                 moverOffsetHeight = e.target.offsetHeight,
 
-                result = pageY - moverOffsetTop - (moverOffsetHeight / 2) - itemTop;
+                result = pageY - moverOffsetTop + (moverOffsetHeight / 2) - itemTop;
 
 
             parentElement.style.transform = `translateY(${result}px) scale(0.9)`
             parentElement.style.borderColor = 'rgb(129 140 248)'
             parentElement.style.zIndex = 3
+
+            // Drop
+            for (let i = 0; i < items.length; i++) {
+                // if (pageY - listBoxOffsetTop <= itemOffsetHeight * i  && itemOffsetHeight * i >= pageY - listBoxOffsetTop ) {
+                // }
+            }
 
             // For scrolling
             const clientY = e.touches[0].clientY
@@ -54,6 +63,8 @@ export default ({ listBoxRef, items }) => {
             } else if (clientY > screenHeight - 200) {
                 window.scrollBy(0, +10)
             };
+
+
 
 
         } else {

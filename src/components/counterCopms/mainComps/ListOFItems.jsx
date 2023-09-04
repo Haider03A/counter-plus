@@ -18,7 +18,7 @@ export default () => {
 
 
             return (
-                <li style={{order: i}} className={`${false ? 'bg-gray-50' : 'bg-white'} mb-3 border-dashed border-2 border-transparent p-2 pb-0 rounded-lg block`} key={item.key} data-key={item.key}>
+                <li style={{height: 200}} className={`${false ? 'bg-gray-50' : 'bg-white'} test mb-3 border-dashed border-2 border-transparent p-2 pb-0 rounded-lg block`} key={item.key} data-key={item.key}>
                     <div className='flex gap-x-4 mb-3'>
                         <div className='flex flex-col gap-3'>
                             <PlusButton dataKey={item.key} />
