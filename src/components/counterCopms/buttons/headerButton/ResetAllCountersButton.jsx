@@ -15,6 +15,7 @@ export default () => {
 
             for (let i = 0; i < cloneItems.length; i++) {
                 cloneItems[i].count = 0
+                cloneItems[i].unit = '' 
             }
 
             setItems(cloneItems)

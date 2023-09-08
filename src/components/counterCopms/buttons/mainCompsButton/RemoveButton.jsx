@@ -14,6 +14,7 @@ export default ({ dataKey, countEqZero }) => {
                     break;
                 } else {
                     cloneItems[i].count = 0
+                    cloneItems[i].unit = ''
                     break;
                 }
             }
