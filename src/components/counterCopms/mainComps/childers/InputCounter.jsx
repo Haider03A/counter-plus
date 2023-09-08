@@ -68,7 +68,7 @@ export default ({ dataKey }) => {
         <div className="font-bold flex gap-x-1 basis-full justify-end 3sm:basis-auto 3sm:justify-normal">
             {butVisible &&
                 <button onClick={onClickHandler} className={`${butMinus ? 'bg-red-500' : 'bg-indigo-500'} h-14 px-3 bg-blue-500 text-white rounded-lg`}>حساب</button>}
-            <input dir='ltr' type="number" value={theEndValue} min={0} placeholder="أدخل رقما" onKeyDown={onKeydownHandker} onChange={onChangeHandler} className={`${inputNotVaild ? 'focus:border-red-500' : 'focus:border-indigo-500'} border-dashed border-2 w-28 h-14 placeholder:text-gray-300 placeholder:text-right outline-none p-2.5 bg-transparent  duration-300 rounded-lg`} />
+            <input dir='ltr' type="number" value={theEndValue} min={0} placeholder="أدخل رقما" onKeyDown={onKeydownHandker} onChange={onChangeHandler} className={`${inputNotVaild ? 'focus:border-red-500' : 'focus:border-indigo-500'} border-dashed border-2 w-28 h-14 placeholder:text-gray-300 placeholder:text-right outline-none p-2.5 bg-transparent duration-300 rounded-lg`} />
         </div>
     )
 }

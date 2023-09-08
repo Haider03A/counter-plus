@@ -8,8 +8,8 @@ export default () => {
     const clickHandler = () => {
         if (items[0]) {
             let toClipboard = ''
-            items.forEach(({ item, count }) => {
-                toClipboard += `${item}\t${count ? count : ''}\n`
+            items.forEach(({ item, count, unit }) => {
+                toClipboard += `${item}\t${count ? `${count} ${unit ? unit : ''}` : ''}\n`
             });
             navigator.clipboard.writeText(toClipboard).then(
                 () => {
