@@ -1,6 +1,6 @@
 import './counter.css'
 import AddItems from '../../components/counterCopms/mainComps/AddItems'
-import ListOFItems from '../../components/counterCopms/mainComps/ListOFItems'
+import ListOFItems from '../../components/counterCopms/mainComps/ListOfPages/ListOfPages'
 import LocalStorage from '../../components/counterCopms/mainComps/LocalStorage'
 import MainController from '../../components/counterCopms/header/HeaderCounter'
 

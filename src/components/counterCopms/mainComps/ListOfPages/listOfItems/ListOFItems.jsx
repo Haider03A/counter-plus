@@ -1,11 +1,10 @@
 import InputCounter from './childers/InputCounter'
-import MinusButton from '../buttons/mainCompsButton/MinusButton'
-import PlusButton from '../buttons/mainCompsButton/PlusButton'
-import RemoveButton from '../buttons/mainCompsButton/RemoveButton'
-import CounterContext from '../../../context/counterContext/CounterContext'
-import { useContext, useEffect, useRef, useState } from 'react'
 import Counter from './childers/CounterItem'
-// import SelectUnit from './childers/SelectUnit'
+import MinusButton from '../../../buttons/mainCompsButton/MinusButton'
+import PlusButton from '../../../buttons/mainCompsButton/PlusButton'
+import RemoveButton from '../../../buttons/mainCompsButton/RemoveButton'
+import CounterContext from '../../../../../context/counterContext/CounterContext'
+import { useContext, useEffect, useRef, useState } from 'react'
 
 
 export default () => {
@@ -18,7 +17,7 @@ export default () => {
 
 
             return (
-                <li className={`${false ? 'bg-gray-50' : 'bg-white'} test mb-3 border-dashed border-2 border-transparent p-2 pb-0 rounded-lg block`} key={item.key} data-key={item.key}>
+                <li className='bg-white border-dashed border-2 border-transparent p-2 pb-0 rounded-lg block' key={item.key} data-key={item.key}>
                     <div className='flex justify-between gap-x-4 mb-3'>
                         <div className='flex flex-col gap-3'>
                             <PlusButton dataKey={item.key} />
@@ -59,7 +58,7 @@ export default () => {
     return (
         <>
             {items[0] ?
-                <ul ref={listBoxRef} className="sm:container bg-transparent relative overflow-y-hidden flex flex-col pb-28 md:px-10 mx-auto px-5 pt-5">
+                <ul ref={listBoxRef} className="sm:container gap-y-3 bg-transparent relative overflow-y-hidden flex flex-col pb-28 md:px-10 mx-auto px-5 pt-5">
                     {elements}
                 </ul>
                 :
