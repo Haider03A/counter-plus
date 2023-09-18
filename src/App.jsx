@@ -3,9 +3,9 @@ import Counter from './pages/counter/Counter'
 
 function App() {
  return(
-  <>    
+  <main>    
     <Counter />
-  </>
+  </main>
  )
 }
 

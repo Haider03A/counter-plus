@@ -25,7 +25,7 @@ export default () => {
                         </div>
                         <div className='flex w-full flex-col justify-between items-start gap-x-1'>
                             <div className='flex w-full justify-between gap-x-3'>
-                                <span className="basis-full block font-bold text-sm 2sm:text-base sm:text-lg">{item.item}</span>
+                                <span className="basis-full block font-bold text-sm xsm:text-base sm:text-lg">{item.item}</span>
                                 <div className='flex gap-x-1'>
                                   {item.count ? <Counter item={item} dataKey={item.key} /> : ''}
                                   <RemoveButton dataKey={item.key} countEqZero={item.count ? false : true} />
@@ -58,7 +58,7 @@ export default () => {
     return (
         <>
             {items[0] ?
-                <ul ref={listBoxRef} className="sm:container gap-y-3 bg-transparent relative overflow-y-hidden flex flex-col pb-28 md:px-10 mx-auto px-5 pt-5">
+                <ul ref={listBoxRef} className="gap-y-3 bg-transparent relative overflow-y-hidden flex flex-col">
                     {elements}
                 </ul>
                 :

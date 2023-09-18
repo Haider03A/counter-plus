@@ -1,4 +1,4 @@
-import CounterContext from '../../../context/counterContext/CounterContext'
+import CounterContext from '../../../../context/counterContext/CounterContext'
 import { useContext, useRef } from 'react'
 
 export default () => {
@@ -29,7 +29,7 @@ export default () => {
 
             words.forEach(word => {
                 if (word != '') {
-                    cloneItems.push({ key: cloneKey, item: word, count: 0, inputNum: ''})    
+                    cloneItems.push({ key: cloneKey, item: word, count: 0})    
                     cloneKey+=1
                 }
             })
@@ -40,8 +40,7 @@ export default () => {
             cloneItems.push({
                 key,
                 item: inputValue,
-                count: 0,
-                inputNum: ''
+                count: 0
             })
             setItems(cloneItems)
             setKey(key + 1)

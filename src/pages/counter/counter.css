@@ -1,3 +1,13 @@
 body {
     font-family: cairo;
 }
+
+*::-webkit-scrollbar {
+    width: 10px;
+    z-index: 10000;
+}
+
+*::-webkit-scrollbar-thumb {
+    background-color: rgb(219, 219, 219);
+    border-radius: 4px;
+  }

@@ -1,0 +1,20 @@
+[
+    {
+        "pageKey": "number",
+        "pageName": "string",
+        "pageStatus": {
+            "show": "boolean",
+            "active": "boolean"
+        },
+        "pageConfig": {
+            "color": "string"
+        },
+        "items": [
+            {
+                "ItemKey": "number",
+                "item": "string",
+                "count": "number"
+            }
+        ]
+    }
+]

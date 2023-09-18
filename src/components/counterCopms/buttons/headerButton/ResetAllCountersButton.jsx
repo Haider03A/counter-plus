@@ -1,5 +1,4 @@
 import { useContext } from 'react'
-import { motion, AnimatePresence } from 'framer-motion'
 
 import CounterContext from '../../../../context/counterContext/CounterContext'
 
