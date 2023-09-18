@@ -26,7 +26,7 @@ export default () => {
     return (
         <div className='flex items-center gap-x-1'>
             <button onClick={clickHandler} className="active:bg-blue-700 duration-300 h-12 px-3 bg-sky-600 text-stone-50 rounded-lg">نسخ الى الحافظة</button>
-            <span className={`${copied ? 'bg-gray-200' : 'fill-transparent'} flex justify-center duration-300 items-center h-12 px-3 rounded-lg`}>{copiedIcon}</span>
+            <span className={`${copied ? 'bg-gray-200 block' : 'hidden fill-transparent'} flex justify-center duration-300 items-center h-12 px-3 rounded-lg`}>{copiedIcon}</span>
         </div>
     )
 }

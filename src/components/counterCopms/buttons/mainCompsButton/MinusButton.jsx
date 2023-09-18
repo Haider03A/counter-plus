@@ -25,7 +25,7 @@ export default ({ dataKey }) => {
     }
 
     const minusIcon = <svg className={`${butChliked ? 'stroke-red-400' : 'stroke-gray-200' } h-6 duration-300 pointer-events-none stroke-3`} xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" >
-        <path strokeLinecap="round" strokeLinejoin="round"  d="M6 12L18 12" /></svg>
+        <path strokeLinecap="round" strokeLinejoin="round" d="M6 12L18 12"/></svg>
 
     return (
         <button onClick={minusCount} className={`${butChliked ? 'border-red-400' : 'border-gray-200' } border-dashed border-2 flex justify-center items-center duration-300 h-14 w-14 rounded-lg`}>{minusIcon}</button>
