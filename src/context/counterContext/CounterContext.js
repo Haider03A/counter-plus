@@ -7,8 +7,9 @@ const valeusCounterContext = () => {
     const [thereIsCountNum, setThereIsCountNum] = useState(false)
     const minCount = 0
     const maxCount = 999
+    const [popupActive, SetpopupActive] = useState(false)
     
-   return { items, setItems, key, setKey, minCount, maxCount, thereIsCountNum, setThereIsCountNum, newCountNum, setNewCountNum }
+   return { items, setItems, key, setKey, minCount, maxCount, thereIsCountNum, setThereIsCountNum, newCountNum, setNewCountNum, popupActive, SetpopupActive }
 }
 
 

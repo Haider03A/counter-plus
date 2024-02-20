@@ -9,15 +9,17 @@ import PrintTemplete from '../../components/counterCopms/mainComps/PrintTemplete
 import './counter.css'
 
 import CounterContext from '../../context/counterContext/CounterContext'
+import PageManger from '../../components/counterCopms/mainComps/PageManger'
 
 export default () => {
-    const { printMode } = useContext(CounterContext)
+    const { popupActive } = useContext(CounterContext)
 
     return (
-        <main>
+        <main className={`${popupActive ? 'overflow-hidden' : ''}`}>
             <LocalStorage />
             <PrintTemplete />
             <MainController />
+            <PageManger />
             <AddItems />
             <ListOFItems />
         </main>

@@ -1,5 +1,6 @@
 body {
-    font-family: cairo;
+    font-family: "Almarai", sans-serif;
+    font-style: normal;
 }
 
 * {
@@ -9,4 +10,20 @@ body {
 
 @page {
     margin: 0;
+}
+
+*::-webkit-scrollbar {
+    width: 0px;
+    padding: 0;
+}
+
+*::-webkit-scrollbar-track {
+    width: 0px;
+    padding: 0;
+}
+
+*::-webkit-scrollbar-thumb {
+    /* Customize the scrollbar thumb */
+    width: 0px;
+    padding: 0;
 }
