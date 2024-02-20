@@ -59,11 +59,11 @@ export default () => {
     return (
         <>
             {items[0] ?
-                <ul ref={listBoxRef} className="sm:container bg-transparent relative overflow-y-hidden flex flex-col pb-28 md:px-10 mx-auto px-5 pt-5">
+                <ul ref={listBoxRef} className="print:hidden sm:container bg-transparent relative overflow-y-hidden flex flex-col pb-28 md:px-10 mx-auto px-5 pt-5">
                     {elements}
                 </ul>
                 :
-                <h3 className="sm:container py-24 font-bold text-gray-300 flex justify-center items-center md:px-10 mx-auto p-5">لا يوجد اي عنصر مضاف، أضف عناصر لتظهر هنا</h3>
+                <h3 className="print:hidden sm:container py-24 font-bold text-gray-300 flex justify-center items-center md:px-10 mx-auto p-5">لا يوجد اي عنصر مضاف، أضف عناصر لتظهر هنا</h3>
             }
         </>
     )

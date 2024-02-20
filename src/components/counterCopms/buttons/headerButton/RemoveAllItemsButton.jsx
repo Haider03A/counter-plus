@@ -1,7 +1,7 @@
 import { useContext } from 'react'
 import CounterContext from '../../../../context/counterContext/CounterContext'
 
-export default () => {
+export default ({ butStyle }) => {
     const { setItems, setKey} = useContext(CounterContext)
     const removeKey = 3612
 
@@ -18,6 +18,6 @@ export default () => {
     }
 
     return(
-        <button onClick={clickHandler} className="active:bg-blue-500 duration-300 h-12 px-3 bg-rose-500 text-stone-50 rounded-lg">حذف الكل</button>
+        <button onClick={clickHandler} className={`${butStyle} `}>حذف الكل</button>
     )
 }

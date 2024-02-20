@@ -1,24 +1,18 @@
-import './counter.css'
-import AddItems from '../../components/counterCopms/mainComps/AddItems'
-import ListOFItems from '../../components/counterCopms/mainComps/ListOFItems'
-import LocalStorage from '../../components/counterCopms/mainComps/LocalStorage'
-import MainController from '../../components/counterCopms/header/HeaderCounter'
 
 import CounterContext from '../../context/counterContext/CounterContext'
 import { valeusCounterContext } from '../../context/counterContext/CounterContext'
-
+import MainComps from './MainComps'
 
 
 export default () => {
-   return (
-        <main>
+    
+
+    return (
             <CounterContext.Provider value={valeusCounterContext()}>
-                <LocalStorage />
-                <MainController />
-                <ListOFItems />
-                <AddItems />
+                
+                <MainComps />
+
             </CounterContext.Provider>
 
-        </main>
     )
 }

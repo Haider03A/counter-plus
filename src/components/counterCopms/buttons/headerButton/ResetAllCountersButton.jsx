@@ -3,7 +3,7 @@ import { motion, AnimatePresence } from 'framer-motion'
 
 import CounterContext from '../../../../context/counterContext/CounterContext'
 
-export default () => {
+export default ({ butStyle }) => {
     const { items, setItems } = useContext(CounterContext)
     const resetKey = 2212
 
@@ -26,6 +26,6 @@ export default () => {
 
     }
     return (
-        <button onClick={clickHandler} className="active:bg-blue-500 duration-300 h-12 px-3 bg-teal-600 text-stone-50 rounded-lg">اعادة ضبط الكل</button>
+        <button onClick={clickHandler} className={`${butStyle}`}>اعادة ضبط الكل</button>
     )
 }
