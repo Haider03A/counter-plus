@@ -17,9 +17,9 @@ export default () => {
             return (
                 <div className="absolute overflow-hidden top-[calc(100%-20px)] right-4 w-44 z-10 flex flex-col items-start bg-white divide-y divide-gray-100 rounded-lg shadow">
                     {items[0] && <CopyToClipboardButton butStyle={childrenButtonStyle} />}
+                    {items[0] && <PrintTemplete butStyle={childrenButtonStyle} />}
                     {thereIsCountNum && <ResetAllCountersButton butStyle={childrenButtonStyle} />}
                     {items[0] && <RemoveAllItemsButton butStyle={childrenButtonStyle} />}
-                    {items[0] && <PrintTemplete butStyle={childrenButtonStyle} />}
                 </div>
             )
         } else if (showOptionsBut) {

@@ -9,9 +9,7 @@ export default () => {
 
     return (
             <CounterContext.Provider value={valeusCounterContext()}>
-                
                 <MainComps />
-
             </CounterContext.Provider>
 
     )
