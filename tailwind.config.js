@@ -8,6 +8,9 @@ export default {
     extend: {
       zIndex: {
         '1': '1',
+      },
+      width: {
+        100: '34rem'
       }
     },
     screens: {

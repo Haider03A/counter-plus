@@ -15,7 +15,7 @@ export default () => {
     const { popupActive } = useContext(CounterContext)
 
     return (
-        <main className={`${popupActive ? 'overflow-hidden' : ''}`}>
+        <main className={`${popupActive ? 'h-screen w-screen overflow-hidden' : ''}`}>
             <LocalStorage />
             <PrintTemplete />
             <MainController />

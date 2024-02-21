@@ -2,7 +2,7 @@ import CounterContext from '../../../context/counterContext/CounterContext'
 import { useContext, useRef } from 'react'
 
 export default () => {
-    const { items, setItems, key, setKey } = useContext(CounterContext)
+    const { items, setItems, key, setKey, pageActiveId } = useContext(CounterContext)
     const inputRef = useRef()
 
     const addItem = _ => {
@@ -29,7 +29,7 @@ export default () => {
 
             words.forEach(word => {
                 if (word != '') {
-                    cloneItems.push({ key: cloneKey, item: word, count: 0, inputNum: ''})    
+                    cloneItems.push({ key: cloneKey, pageId: pageActiveId, item: word, count: 0, inputNum: ''})    
                     cloneKey+=1
                 }
             })
@@ -39,6 +39,7 @@ export default () => {
         } else if (inputValue) {
             cloneItems.push({
                 key,
+                pageId: pageActiveId,
                 item: inputValue,
                 count: 0,
                 inputNum: ''

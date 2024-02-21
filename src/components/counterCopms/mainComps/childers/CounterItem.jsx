@@ -44,7 +44,6 @@ export default ({ item, dataKey }) => {
                 break
             }
         }
-        console.log(item);
 
     } 
 

@@ -20,7 +20,7 @@ export default () => {
             </button>
             {
                 showNawPageManger &&
-                <NewPageManger />
+                <NewPageManger SetShowNawPageManger={ SetShowNawPageManger } />
             }
         </>
     )
