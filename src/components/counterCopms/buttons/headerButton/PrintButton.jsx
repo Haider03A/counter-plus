@@ -2,14 +2,15 @@ import { useContext, useState } from 'react'
 import CounterContext from '../../../../context/counterContext/CounterContext'
 
 export default ({ butStyle }) => {
-    const { printMode, setPrintMode } = useContext(CounterContext)
+    const { setPrintMode } = useContext(CounterContext)
 
-    const clickHandler = () => {
+    const clickHandler = async () => {
+        await setPrintMode(true)
         window.print()
     }
 
     window.addEventListener("afterprint", () => {
-        
+        setPrintMode(a => a)
     });
 
     return (

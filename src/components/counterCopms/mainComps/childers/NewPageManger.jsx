@@ -34,7 +34,7 @@ export default ({ SetShowNawPageManger }) => {
         const { pageName, pageTitle } = pageDateObj
 
         if (pageName && pageTitle) {
-            pageDateObj.id = pageId
+            pageDateObj.pageId = pageId
             setPages([...pages, pageDateObj])
             setPageActiveId(pageId)
             setPageId(a => ++a)

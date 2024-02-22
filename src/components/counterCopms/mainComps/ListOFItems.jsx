@@ -14,7 +14,7 @@ export default () => {
 
     useEffect(_ => {
         const elements = items.map((item) => {
-            if (item.pageId == pageActiveId || pageActiveId == 'all') {
+            if (item.idPage == pageActiveId || pageActiveId === 0) {
                 return (
                     <li className="bg-white test mb-3 border-dashed border-2 border-transparent p-2 pb-0 rounded-lg block" key={item.key} data-key={item.key}>
                         <div className='flex justify-between gap-x-4 mb-3'>
@@ -61,7 +61,7 @@ export default () => {
     return (
         <>
             {items[0] ?
-                <ul ref={listBoxRef} className="print:hidden sm:container bg-transparent relative overflow-y-hidden flex flex-col pb-28 md:px-10 mx-auto px-5 pt-5">
+                <ul ref={listBoxRef} className="sm:container bg-transparent relative overflow-y-hidden flex flex-col pb-28 md:px-10 mx-auto px-5 pt-5">
                     {elements}
                 </ul>
                 :

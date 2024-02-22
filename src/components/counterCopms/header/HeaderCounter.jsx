@@ -2,30 +2,26 @@ import { useContext, useRef, useState } from 'react'
 
 import CounterContext from '../../../context/counterContext/CounterContext'
 import CopyToClipboardButton from "../buttons/headerButton/CopyToClipboardButton"
-import RemoveAllItemsButton from "../buttons/headerButton/RemoveAllItemsButton"
+import ResetAppButton from "../buttons/headerButton/ResetAppButton"
 import ResetAllCountersButton from "../buttons/headerButton/ResetAllCountersButton"
-import PrintTemplete from '../buttons/headerButton/PrintButton'
+import PrintButton from '../buttons/headerButton/PrintButton'
+import PrintPreview from '../buttons/headerButton/PrintPreview'
 
 export default () => {
     const { items, thereIsCountNum } = useContext(CounterContext)
     const optionButRef = useRef()
     const [showOptionsBut, setShowOptionsBut] = useState(false)
-    const childrenButtonStyle = 'text-lg font-semibold w-full text-right px-4 py-2 active:bg-gray-100 text-gray-700'
+    const childrenButtonStyle = 'whitespace-nowrap text-lg font-semibold w-full text-right px-4 py-2 active:bg-gray-100 text-gray-700'
 
     const dcopDownOptionList = _ => {
-        if (items[0] && showOptionsBut) {
+        if (showOptionsBut) {
             return (
-                <div className="absolute overflow-hidden top-[calc(100%-10px)] right-4 w-44 z-10 flex flex-col items-start bg-white divide-y divide-gray-100 rounded-lg shadow">
+                <div className="absolute overflow-hidden top-[calc(100%-10px)] right-4 z-10 flex flex-col items-start bg-white divide-y divide-gray-100 rounded-lg shadow">
                     {items[0] && <CopyToClipboardButton butStyle={childrenButtonStyle} />}
-                    {items[0] && <PrintTemplete butStyle={childrenButtonStyle} />}
+                    {items[0] && <PrintButton butStyle={childrenButtonStyle} />}
+                    {items[0] && <PrintPreview butStyle={childrenButtonStyle} />}
                     {thereIsCountNum && <ResetAllCountersButton butStyle={childrenButtonStyle} />}
-                    {items[0] && <RemoveAllItemsButton butStyle={childrenButtonStyle} />}
-                </div>
-            )
-        } else if (showOptionsBut) {
-            return (
-                <div className="absolute overflow-hidden top-[calc(100%-20px)] right-4 z-10 items-start bg-white divide-y divide-gray-100 rounded-lg shadow">
-                    <span className={childrenButtonStyle}>لا توجد اي عناصر</span>
+                    <ResetAppButton butStyle={childrenButtonStyle} />
                 </div>
             )
         }

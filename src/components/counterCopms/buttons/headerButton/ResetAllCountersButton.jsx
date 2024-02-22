@@ -26,6 +26,6 @@ export default ({ butStyle }) => {
 
     }
     return (
-        <button onClick={clickHandler} className={`${butStyle}`}>اعادة ضبط الكل</button>
+        <button onClick={clickHandler} className={`${butStyle}`}>اعادة ضبط العدادات</button>
     )
 }
