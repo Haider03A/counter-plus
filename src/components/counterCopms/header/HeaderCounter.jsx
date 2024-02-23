@@ -5,7 +5,6 @@ import CopyToClipboardButton from "../buttons/headerButton/CopyToClipboardButton
 import ResetAppButton from "../buttons/headerButton/ResetAppButton"
 import ResetAllCountersButton from "../buttons/headerButton/ResetAllCountersButton"
 import PrintButton from '../buttons/headerButton/PrintButton'
-import PrintPreview from '../buttons/headerButton/PrintPreview'
 
 export default () => {
     const { items, thereIsCountNum } = useContext(CounterContext)
@@ -19,7 +18,6 @@ export default () => {
                 <div className="absolute overflow-hidden top-[calc(100%-10px)] right-4 z-10 flex flex-col items-start bg-white divide-y divide-gray-100 rounded-lg shadow">
                     {items[0] && <CopyToClipboardButton butStyle={childrenButtonStyle} />}
                     {items[0] && <PrintButton butStyle={childrenButtonStyle} />}
-                    {items[0] && <PrintPreview butStyle={childrenButtonStyle} />}
                     {thereIsCountNum && <ResetAllCountersButton butStyle={childrenButtonStyle} />}
                     <ResetAppButton butStyle={childrenButtonStyle} />
                 </div>

@@ -1,18 +1,7 @@
-import { useContext, useState } from 'react'
-import CounterContext from '../../../../context/counterContext/CounterContext'
-
 export default ({ butStyle }) => {
-    const { setPrintMode } = useContext(CounterContext)
+    const clickHandler = () => window.print();
 
-    const clickHandler = async () => {
-        await setPrintMode(true)
-        window.print()
-    }
-
-    window.addEventListener("afterprint", () => {
-        setPrintMode(a => a)
-    });
-
+    document.addEventListener('afterprint', () => alert(1))
     return (
         <button onClick={clickHandler} className={`${butStyle}`}>طباعة الصفحات</button>
     )

@@ -8,8 +8,10 @@ body {
     print-color-adjust: exact !important;
 }
 
-@page {
-    margin: 0;
+@media print {
+    @page {
+        margin: 30px 40px;
+    }
 }
 
 #pages-name-box::-webkit-scrollbar, #pages-temp-box::-webkit-scrollbar {

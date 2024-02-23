@@ -21,17 +21,9 @@ export default () => {
             <ResetApp />
             <MainController />
             <PageManger />
-            {
-                printMode &&
-                <PrintTemplete />
-            }
-            {
-                !printMode &&
-                <>
-                    <AddItems />
-                    <ListOFItems />
-                </>
-            }
+            <PrintTemplete />
+            <AddItems />
+            <ListOFItems />
 
         </main>
 
