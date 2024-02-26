@@ -1,7 +1,6 @@
 import { useContext, useEffect, useRef } from "react"
 
-import NewPageButton from "../buttons/mainCompsButton/NewPageButton"
-import CounterContext from '../../../context/counterContext/CounterContext'
+import AddPage from "./children/AddPage"
 
 export default () => {
     const { pages, pageActiveId, setPageActiveId } = useContext(CounterContext)
@@ -11,7 +10,7 @@ export default () => {
 
     return (
         <div className="flex print:hidden h-12 px-4 gap-x-1 justify-start items-center sm:container mx-auto mt-2 ">
-            <NewPageButton />
+            <AddPage />
 
             <div id="pages-name-box" className="flex overflow-x-scroll font-semibold gap-x-1 h-full text-gray-700 bg-gray-100 rounded justify-start items-center">
                 {
