@@ -6,7 +6,7 @@ import './App.css'
 // import PrintTemplete from './components/counterCopms/mainComps/PrintTemplete'
 // import PageManger from './components/counterCopms/mainComps/PageManger'
 
-// import ItemsList from './components/main/items/ItemsList'
+import ItemsList from './components/main/items/ItemsList'
 import AddItems from './components/main/items/AddItem'
 
 function App() {
@@ -21,7 +21,7 @@ function App() {
             <PageManger />
             <PrintTemplete /> */}
             <AddItems />
-            {/* <ItemsList /> */}
+            <ItemsList />
 
         </main>
 
