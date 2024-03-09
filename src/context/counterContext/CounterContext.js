@@ -8,10 +8,10 @@ const valeusCounterContext = () => {
     const minCount = 0
     const maxCount = 999
     const [printMode, setPrintMode] = useState(false)
-    const [popupActive, SetpopupActive] = useState(false)
-    const [pages, setPages] = useState([{pageName: 'الكل', pageTitle: 'قائمة', pageId: 0}])
+    const [popupActive, setpopupActive] = useState(false)
     const [pageActiveId, setPageActiveId] = useState(0)
     const [pageId, setPageId] = useState(1)
+    const [pages, setPages] = useState([{pageName: 'الصفحة الاولى', pageTitle: 'الصفحة الاولى', pageId: 0}])
     const [resetApp, setResetApp] = useState(false)
 
     return {
@@ -21,7 +21,7 @@ const valeusCounterContext = () => {
         thereIsCountNum, setThereIsCountNum,
         newCountNum, setNewCountNum,
         printMode, setPrintMode,
-        popupActive, SetpopupActive,
+        popupActive, setpopupActive,
         pages, setPages,
         pageActiveId, setPageActiveId,
         pageId, setPageId,

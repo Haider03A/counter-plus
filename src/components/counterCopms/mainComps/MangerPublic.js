@@ -9,14 +9,14 @@ const ResetApp = () => {
         if(resetApp) {
             setItems([])
             setKey(0)
-            setPages([{pageName: 'الكل', pageTitle: 'قائمة', pageId: 0}])
+            setPages([{pageName: 'الصفحة الاولى', pageTitle: 'الصفحة الاولى', pageId: 0}])
             setPageActiveId(0)
             setPageId(1)
             setPrintMode(false)
             
             setResetApp(false)
+            location.reload()
         }
-        
     }, [resetApp])
 }
 

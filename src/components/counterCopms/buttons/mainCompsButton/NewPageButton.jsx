@@ -3,14 +3,14 @@ import NewPageManger from "../../mainComps/childers/NewPageManger"
 import CounterContext from '../../../../context/counterContext/CounterContext'
 
 export default () => {
-    const { SetpopupActive } = useContext(CounterContext)
-    const [showNawPageManger, SetShowNawPageManger] = useState(false)
+    const { setpopupActive } = useContext(CounterContext)
+    const [showNawPageManger, setShowNawPageManger] = useState(false)
     const onClickHandler = () => {
-        SetShowNawPageManger(a => !a)
+        setShowNawPageManger(a => !a)
     }
 
     useEffect(() => {
-        SetpopupActive(showNawPageManger)
+        setpopupActive(showNawPageManger)
     }, [showNawPageManger])
 
     return (
@@ -20,7 +20,7 @@ export default () => {
             </button>
             {
                 showNawPageManger &&
-                <NewPageManger SetShowNawPageManger={ SetShowNawPageManger } />
+                <NewPageManger setShowNawPageManger={ setShowNawPageManger } />
             }
         </>
     )
