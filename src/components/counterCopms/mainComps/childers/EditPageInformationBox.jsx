@@ -4,7 +4,6 @@ import CounterContext from '../../../../context/counterContext/CounterContext'
 
 export default ({ setShowEditPageInformationBox }) => {
     const { pages, setPages, pageActiveId } = useContext(CounterContext)
-    console.log(setShowEditPageInformationBox);
 
     const { pageName, pageTitle } = pages.find(page => page.pageId === pageActiveId)
 
@@ -68,7 +67,7 @@ export default ({ setShowEditPageInformationBox }) => {
                     </div>
                     <div className="2sm:w-3/4">
                         <label htmlFor="new_page_title" className="block mb-2 text-sm font-semibold text-gray-900">عنوان الصفحة</label>
-                        <input value={inputNewPageTitle} onChange={(e) => setInputNewPageTitle(`e.target.value`)} type="text" id="new_page_title" className="bg-gray-100 border-b-4 border-transparent text-gray-950 text-sm rounded-lg focus:outline-none focus:border-blue-500 block w-full p-2.5" placeholder="قائمة كهرباء مرحلة ثانية" required />
+                        <input value={inputNewPageTitle} onChange={(e) => setInputNewPageTitle(e.target.value)} type="text" id="new_page_title" className="bg-gray-100 border-b-4 border-transparent text-gray-950 text-sm rounded-lg focus:outline-none focus:border-blue-500 block w-full p-2.5" placeholder="قائمة كهرباء مرحلة ثانية" required />
                     </div>
                 </div>
                 <div className="mt-4 flex justify-center gap-x-1 2sm:gap-x-2">

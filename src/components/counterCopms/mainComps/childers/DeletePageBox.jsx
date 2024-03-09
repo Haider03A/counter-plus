@@ -7,13 +7,13 @@ export default ({ setShowDeletePageBox }) => {
     const { pages, setPages, pageActiveId } = useContext(CounterContext)
 
     const DeletePageButtonHandler = () => {
+        const clonePages = [...pages]
         if (pages[1]) {
-            const clonePages = [...pages].map(page => {
+            clonePages.forEach((page, i) => {
                 const { pageId } = page
                 if (pageId === pageActiveId) {
-                    return;
+                    clonePages.splice(i)
                 }
-                return page
             })
             setPages(clonePages)
 
@@ -34,7 +34,7 @@ export default ({ setShowDeletePageBox }) => {
                     </button>
                 </div>
                 <div className="mt-4 flex justify-center gap-x-1 2sm:gap-x-2">
-                    <button className="focus:outline-none text-white font-semibold bg-purple-500 active:bg-purple-700 py-3 px-4 rounded-lg" onClick={() => DeletePageButtonHandler()}>تغيير</button>
+                    <button className="focus:outline-none text-white font-semibold bg-rose-500 active:bg-rose-700 py-3 px-4 rounded-lg" onClick={() => DeletePageButtonHandler()}>حذف</button>
                     <button className="focus:outline-none text-gray-700 font-semibold active:bg-gray-300 p-3 rounded-lg bg-gray-100" onClick={() => setShowDeletePageBox(a => !a)}>الغاء</button>
                 </div>
 
