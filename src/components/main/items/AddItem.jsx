@@ -1,7 +1,7 @@
 import { useRef } from 'react'
 import { useSelector, useDispatch, } from 'react-redux'
 
-import { addItem } from '../../../features/items/itemsSlice'
+import { addItem } from '../../../features/pageItem/pageItemSlice'
 
 export default () => {
     const dispatch = useDispatch()

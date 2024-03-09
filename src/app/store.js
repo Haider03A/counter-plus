@@ -1,12 +1,12 @@
 import { configureStore } from '@reduxjs/toolkit'
 
-import itemReducer from '../features/items/itemsSlice'
-import pagesReducer from '../features/pages/pagesSilce'
+import itemReducer from '../features/pageItem/pageItemSlice'
+import pageReducer from '../features/page/pageSilce'
 
 const store = configureStore({
     reducer: {
-        items: itemReducer,
-        pages: pagesReducer
+        pageItem: itemReducer,
+        page: pageReducer
     }
 })
 

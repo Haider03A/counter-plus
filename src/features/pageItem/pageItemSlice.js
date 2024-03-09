@@ -2,7 +2,9 @@ import { createSlice } from '@reduxjs/toolkit'
 
 const initialState = {
     itemId: 1,
-    items: []
+    items: [],
+    minCount: 0,
+    maxCount: 999
 }
 
 const itemSlice = createSlice({
@@ -43,7 +45,7 @@ const itemSlice = createSlice({
                     itemId: state.itemId,
                     pageId: 1111,
                     item: value,
-                    count: 0,
+                    count: 100,
                     inputNum: ''
                 }]
                 state.itemId = ++state.itemId
@@ -52,5 +54,5 @@ const itemSlice = createSlice({
     }
 })
 
-export const { addItem } = itemSlice.actions
+export const { addItem, setNewCountNum } = itemSlice.actions
 export default itemSlice.reducer

@@ -7,7 +7,7 @@ const initialState = {
 }
 
 const itemSlice = createSlice({
-    name: 'pages',
+    name: 'page',
     initialState,
     reducers: {
         setPageIdActive : (state, pageIdActive) => {

@@ -1,16 +1,16 @@
-// import InputCounter from './children/InputCounter'
 // import IncreaseButton from './buttons/IncreaseButton'
 // import DecrementButton from './buttons/DecrementButton'
 // import RemoveButton from './buttons/RemoveButton'
-// import Counter from './children/CounterItem'
+import InputCounter from './children/InputCounter'
+import Counter from './children/CounterItem'
 
 // import { useContext, useEffect, useRef, useState, pageActiveId } from 'react'
 import { useSelector } from 'react-redux'
-import {useState, useRef, useEffect} from 'react'
+import { useState, useRef, useEffect } from 'react'
 
 
 export default () => {
-    const {items} = useSelector(state => state.items)
+    const { items } = useSelector(state => state.pageItem)
     // const { items, setThereIsCountNum, pageActiveId } = useContext(CounterContext)
     const [elements, setElements] = useState()
     const listBoxRef = useRef()
@@ -26,25 +26,25 @@ export default () => {
                                 {/* <IncreaseButton dataKey={item.key} />
                                 <DecrementButton dataKey={item.key} /> */}
                             </div>
-                            <div className='flex w-full flex-col justify-between items-start gap-x-1'>
+                            <div className='flex w-full flex-col justify-between items-start gap-y-2'>
                                 <div className='flex w-full justify-between gap-x-3'>
                                     <span className="basis-full block font-bold text-sm 2sm:text-base sm:text-lg">{item.item}</span>
-                                    {/* <div className='flex gap-x-1'>
-                                        {item.count ? <Counter item={item} dataKey={item.key} /> : ''}
-                                        <RemoveButton dataKey={item.key} countEqZero={item.count ? false : true} />
-                                    </div> */}
+                                    <div className='flex gap-x-1'>
+                                        {item.count ? <Counter item={item} /> : ''}
+                                        {/* <RemoveButton dataKey={item.key} countEqZero={item.count ? false : true} /> */}
+                                    </div>
                                 </div>
                                 <div className='w-full'>
-                                    {/* <InputCounter dataKey={item.key} /> */}
+                                    <InputCounter item={item} />
                                 </div>
                             </div>
                         </div>
                     </li>
-    
-    
+
+
                 )
             }
-            
+
         })
 
         // let countHave = false
@@ -62,17 +62,17 @@ export default () => {
 
     }, [items])
 
-    
+
     return (
-            <>
-                {items[0] ?
-                    <ul ref={listBoxRef} className="print:hidden sm:container bg-transparent relative overflow-y-hidden flex flex-col pb-28 md:px-10 mx-auto px-5 pt-5">
-                        {elements}
-                    </ul>
-                    :
-                    <h3 className="print:hidden sm:container py-24 font-bold text-gray-300 flex justify-center items-center md:px-10 mx-auto p-5">لا يوجد اي عنصر مضاف، أضف عناصر لتظهر هنا</h3>
-                }
-            </>
-        )
-      
+        <>
+            {items[0] ?
+                <ul ref={listBoxRef} className="print:hidden sm:container bg-transparent relative overflow-y-hidden flex flex-col pb-28 md:px-10 mx-auto px-5 pt-5">
+                    {elements}
+                </ul>
+                :
+                <h3 className="print:hidden sm:container py-24 font-bold text-gray-300 flex justify-center items-center md:px-10 mx-auto p-5">لا يوجد اي عنصر مضاف، أضف عناصر لتظهر هنا</h3>
+            }
+        </>
+    )
+
 }
