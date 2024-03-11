@@ -11,7 +11,7 @@ export default () => {
         return (
             <header className="pb-5 whitespace-nowrap h-[140px] text-gray-800 gap-x-2 px-6 flex justify-between items-center">
                 <h1 className="rounded-lg text-xl font-bold border-b-8 pl-4 border-teal-600">{pageTitle}</h1>
-                
+
                 <div className="flex text-base font-semibold flex-col items-start">
                     <h2 className="rounded-lg pl-4 pb-1 border-b-2 border-teal-600">ابو حيدر مجاري كهرباء</h2>
 
@@ -54,32 +54,31 @@ export default () => {
                 pages.map((page) => {
                     const { pageId, pageTitle } = page
                     let tableItemsIndexs = 1
-                    if (pageId !== 0)
-                        return (
-                            <div key={pageId} className='w-[215.9mm] print:w-auto mx-auto break-before-page'>
-                                <PageHeaderTamplete pageTitle={pageTitle} />
-                                <table className="w-full text-right rounded-t-lg  overflow-hidden shadow">
-                                    <PageTableHeaderTamplete />
-                                    <tbody className="text-sm font-semibold text-gray-900">
-                                        {items.map((oneItem) => {
-                                            const { idPage, key, item, count, unit } = oneItem
-                                            if (pageId == idPage) {
-                                                tableItemsIndexs++
-                                                return (
-                                                    <tr key={key} className="odd:bg-white even:bg-gray-100 border-b last:border-b-4 last:border-teal-600">
-                                                        <td className={tdStyle}>{tableItemsIndexs - 1}</td>
-                                                        <td className={tdStyle}>{item}</td>
-                                                        <td className={tdStyle}>{unit ? count + ' ' + unit : count ? count : ''}</td>
-                                                        <td className={tdStyle}></td>
-                                                    </tr>
-                                                )
-                                            }
+                    return (
+                        <div key={pageId} className='w-[215.9mm] print:w-auto mx-auto break-before-page'>
+                            <PageHeaderTamplete pageTitle={pageTitle} />
+                            <table className="w-full text-right rounded-t-lg  overflow-hidden shadow">
+                                <PageTableHeaderTamplete />
+                                <tbody className="text-sm font-semibold text-gray-900">
+                                    {items.map((oneItem) => {
+                                        const { idPage, key, item, count, unit } = oneItem
+                                        if (pageId == idPage) {
+                                            tableItemsIndexs++
+                                            return (
+                                                <tr key={key} className="odd:bg-white even:bg-gray-100 border-b last:border-b-4 last:border-teal-600">
+                                                    <td className={tdStyle}>{tableItemsIndexs - 1}</td>
+                                                    <td className={tdStyle}>{item}</td>
+                                                    <td className={tdStyle}>{unit ? count + ' ' + unit : count ? count : ''}</td>
+                                                    <td className={tdStyle}></td>
+                                                </tr>
+                                            )
+                                        }
 
-                                        })}
-                                    </tbody>
-                                </table>
-                            </div>
-                        )
+                                    })}
+                                </tbody>
+                            </table>
+                        </div>
+                    )
                 })
             }
 
