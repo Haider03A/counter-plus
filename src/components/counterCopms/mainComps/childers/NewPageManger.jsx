@@ -1,4 +1,4 @@
-import { useRef, useContext } from "react"
+import { useRef, useContext, useEffect } from "react"
 
 import CounterContext from '../../../../context/counterContext/CounterContext'
 
@@ -8,6 +8,7 @@ export default ({ setShowNawPageManger }) => {
     const inputPageNameRef = useRef();
     const inputPageTitleRef = useRef();
 
+    useEffect(() => inputPageNameRef.current.focus(), [])
 
     const createPgaeButtonHandler = async () => {
         const inputPageNameValue = inputPageNameRef.current.value.toString().trim()

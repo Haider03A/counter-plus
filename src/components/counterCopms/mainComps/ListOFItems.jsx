@@ -14,7 +14,7 @@ export default () => {
 
     useEffect(_ => {
         const elements = items.map((item) => {
-            if (item.idPage == pageActiveId || pageActiveId === 0) {
+            if (item.idPage == pageActiveId) {
                 return (
                     <li className="bg-white test mb-3 border-dashed border-2 border-transparent p-2 pb-0 rounded-lg block" key={item.key} data-key={item.key}>
                         <div className='flex justify-between gap-x-4 mb-3'>

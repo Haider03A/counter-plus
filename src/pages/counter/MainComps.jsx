@@ -13,7 +13,7 @@ import CounterContext from '../../context/counterContext/CounterContext'
 import PageManger from '../../components/counterCopms/mainComps/PageManger'
 
 export default () => {
-    const { popupActive, printMode } = useContext(CounterContext)
+    const { popupActive } = useContext(CounterContext)
 
     return (
         <main className={`${popupActive ? 'h-screen w-screen overflow-hidden' : ''}`}>

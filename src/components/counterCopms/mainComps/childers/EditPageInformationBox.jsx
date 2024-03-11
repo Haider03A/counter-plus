@@ -1,14 +1,16 @@
-import { useContext, useState } from 'react'
+import { useContext, useEffect, useRef, useState } from 'react'
 
 import CounterContext from '../../../../context/counterContext/CounterContext'
 
 export default ({ setShowEditPageInformationBox }) => {
     const { pages, setPages, pageActiveId } = useContext(CounterContext)
-
+    const newInputTitleRef = useRef()
     const { pageName, pageTitle } = pages.find(page => page.pageId === pageActiveId)
-
+    
     const [ inputNewPageName, setInputNewPageName ] = useState(pageName)
     const [ inputNewPageTitle, setInputNewPageTitle ] = useState(pageTitle)
+    
+    useEffect(() => newInputTitleRef.current.focus(), [])
 
     const EditInfoPgaeButtonHandler = () => {
         setInputNewPageName(a => a.toString().trim())
@@ -44,10 +46,6 @@ export default ({ setShowEditPageInformationBox }) => {
             setShowEditPageInformationBox(a => !a)
         }
 
-
-
-
-
     }
 
 
@@ -63,7 +61,7 @@ export default ({ setShowEditPageInformationBox }) => {
                 <div className="gap-y-5 mt-2 flex flex-col items-center">
                     <div className="2sm:w-3/4">
                         <label htmlFor="new_page_name" className="block mb-2 text-sm font-semibold text-gray-900">اسم الصفحة</label>
-                        <input value={inputNewPageName} onChange={(e) => setInputNewPageName(e.target.value)} type="text" id="new_page_name" className="bg-gray-100 border-b-4 border-transparent text-gray-950 text-sm rounded-lg focus:outline-none focus:border-blue-500 block w-full p-2.5" placeholder="كهرباء" required />
+                        <input ref={newInputTitleRef} value={inputNewPageName} onChange={(e) => setInputNewPageName(e.target.value)} type="text" id="new_page_name" className="bg-gray-100 border-b-4 border-transparent text-gray-950 text-sm rounded-lg focus:outline-none focus:border-blue-500 block w-full p-2.5" placeholder="كهرباء" required />
                     </div>
                     <div className="2sm:w-3/4">
                         <label htmlFor="new_page_title" className="block mb-2 text-sm font-semibold text-gray-900">عنوان الصفحة</label>

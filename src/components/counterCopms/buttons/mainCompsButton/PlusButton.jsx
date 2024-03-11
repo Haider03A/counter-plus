@@ -4,7 +4,7 @@ import CounterContext from '../../../../context/counterContext/CounterContext'
 export default ({dataKey}) => {
     const { items, setItems, maxCount, setNewCountNum } = useContext(CounterContext)
     const [butChliked, setButChliked] = useState(false)
- 
+    
     const plusCount = () => {
         const cloneItems = [...items]
 
