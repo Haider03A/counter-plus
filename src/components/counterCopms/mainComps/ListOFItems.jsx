@@ -5,10 +5,11 @@ import RemoveButton from '../buttons/mainCompsButton/RemoveButton'
 import CounterContext from '../../../context/counterContext/CounterContext'
 import { useContext, useEffect, useRef, useState, pageActiveId } from 'react'
 import Counter from './childers/CounterItem'
+import EditItemBox from './childers/EditItemBox'
 
 
 export default () => {
-    const { items, setThereIsCountNum, pageActiveId } = useContext(CounterContext)
+    const { items, setThereIsCountNum, pageActiveId, itemActiveId, setItemActiveId } = useContext(CounterContext)
     const [elements, setElements] = useState()
     const listBoxRef = useRef()
 
@@ -22,9 +23,12 @@ export default () => {
                                 <PlusButton dataKey={item.key} />
                                 <MinusButton dataKey={item.key} />
                             </div>
-                            <div className='flex w-full flex-col justify-between items-start gap-x-1'>
+                            <div className='flex w-full flex-col justify-between items-start gap-y-1'>
                                 <div className='flex w-full justify-between gap-x-3'>
-                                    <span className="basis-full block font-bold text-sm 2sm:text-base sm:text-lg">{item.item}</span>
+                                    <div className='relative basis-full'>
+                                        {itemActiveId == item.key ? <EditItemBox /> : ''}
+                                        {itemActiveId != item.key ? <span onClick={() => setItemActiveId(item.key)} className="font-bold text-sm 2sm:text-base sm:text-lg">{item.item}</span> : ''}
+                                    </div>
                                     <div className='flex gap-x-1'>
                                         {item.count ? <Counter item={item} dataKey={item.key} /> : ''}
                                         <RemoveButton dataKey={item.key} countEqZero={item.count ? false : true} />
@@ -36,11 +40,11 @@ export default () => {
                             </div>
                         </div>
                     </li>
-    
-    
+
+
                 )
             }
-            
+
         })
 
         let countHave = false
@@ -56,7 +60,7 @@ export default () => {
 
         setElements(elements)
 
-    }, [items, pageActiveId])
+    }, [items, pageActiveId, itemActiveId])
 
     return (
         <>

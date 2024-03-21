@@ -13,6 +13,7 @@ const valeusCounterContext = () => {
     const [pageId, setPageId] = useState(1)
     const [pages, setPages] = useState([{pageName: 'الصفحة الاولى', pageTitle: 'الصفحة الاولى', pageId: 0}])
     const [resetApp, setResetApp] = useState(false)
+    const [itemActiveId, setItemActiveId] = useState(null)
 
     return {
         items, setItems,
@@ -25,7 +26,8 @@ const valeusCounterContext = () => {
         pages, setPages,
         pageActiveId, setPageActiveId,
         pageId, setPageId,
-        resetApp, setResetApp
+        resetApp, setResetApp,
+        itemActiveId, setItemActiveId
     }
 }
 

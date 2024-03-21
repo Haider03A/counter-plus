@@ -10,7 +10,9 @@ export default ({ setShowEditPageInformationBox }) => {
     const [ inputNewPageName, setInputNewPageName ] = useState(pageName)
     const [ inputNewPageTitle, setInputNewPageTitle ] = useState(pageTitle)
     
-    useEffect(() => newInputTitleRef.current.focus(), [])
+    useEffect(() => {
+        newInputTitleRef.current.focus()
+    }, [])
 
     const EditInfoPgaeButtonHandler = () => {
         setInputNewPageName(a => a.toString().trim())
@@ -61,11 +63,11 @@ export default ({ setShowEditPageInformationBox }) => {
                 <div className="gap-y-5 mt-2 flex flex-col items-center">
                     <div className="2sm:w-3/4">
                         <label htmlFor="new_page_name" className="block mb-2 text-sm font-semibold text-gray-900">اسم الصفحة</label>
-                        <input ref={newInputTitleRef} value={inputNewPageName} onChange={(e) => setInputNewPageName(e.target.value)} type="text" id="new_page_name" className="bg-gray-100 border-b-4 border-transparent text-gray-950 text-sm rounded-lg focus:outline-none focus:border-blue-500 block w-full p-2.5" placeholder="كهرباء" required />
+                        <input ref={newInputTitleRef} value={inputNewPageName} onFocus={(e) => e.target.select()} onChange={(e) => setInputNewPageName(e.target.value)} type="text" id="new_page_name" className="bg-gray-100 border-b-4 border-transparent text-gray-950 text-sm rounded-lg focus:outline-none focus:border-blue-500 block w-full p-2.5" placeholder="كهرباء" required />
                     </div>
                     <div className="2sm:w-3/4">
                         <label htmlFor="new_page_title" className="block mb-2 text-sm font-semibold text-gray-900">عنوان الصفحة</label>
-                        <input value={inputNewPageTitle} onChange={(e) => setInputNewPageTitle(e.target.value)} type="text" id="new_page_title" className="bg-gray-100 border-b-4 border-transparent text-gray-950 text-sm rounded-lg focus:outline-none focus:border-blue-500 block w-full p-2.5" placeholder="قائمة كهرباء مرحلة ثانية" required />
+                        <input value={inputNewPageTitle} onFocus={(e) => e.target.select()} onChange={(e) => setInputNewPageTitle(e.target.value)} type="text" id="new_page_title" className="bg-gray-100 border-b-4 border-transparent text-gray-950 text-sm rounded-lg focus:outline-none focus:border-blue-500 block w-full p-2.5" placeholder="قائمة كهرباء مرحلة ثانية" required />
                     </div>
                 </div>
                 <div className="mt-4 flex justify-center gap-x-1 2sm:gap-x-2">
