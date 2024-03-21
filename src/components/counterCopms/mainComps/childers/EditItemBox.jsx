@@ -14,7 +14,6 @@ export default () => {
 
     const onKeydownHandker = (e) => {
         const inputValue = String(e.target.value).trim()
-        console.log(e);
         if (e.key == "Enter" && inputValue ) {
             const newItem = items.map(item => {
                 if (item.key == itemActiveId) {
